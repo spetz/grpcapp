@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package GrpcApp.Core;
+
+service DemoService {
+    rpc Send (Message) returns (Empty) {}
+}
+
+message Empty {
+}
+
+message Message {
+    string user = 1;
+    string content = 2;
+    string id = 3;
+    repeated Attachment attachments = 4;
+}
+
+message Attachment {
+    string name = 1;
+}
